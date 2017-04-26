@@ -1,11 +1,11 @@
 #ifndef ADMINISTRATOR_H_INCLUDED
 #define ADMINISTRATOR_H_INCLUDED
 
-void CreateAccount(FILE* file);
+void CreateAccount(file);
 void ChangePassword(char password);
-char ViewInfo(FILE* file);
-void DeleteInfo(FILE* file);
-char ShowTop(FILE* file);
-char ShowAll(FILE* file);
+char ViewInfo(file);
+void DeleteInfo(file);
+char ShowTop(file);
+char ShowAll(file);
 
 #endif // ADMINISTRATOR_H_INCLUDED
