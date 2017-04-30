@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1493063070 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\projectc\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
