@@ -31,17 +31,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Customer.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Customer.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="Customer.h" />
 		<Unit filename="administrator.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="administrator.h" />
-		<Unit filename="main.c">
+		<Unit filename="banksystems.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

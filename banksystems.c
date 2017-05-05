@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define MAX_ACCS 1000
+#include "Customer.h"
+#define MAX_ACCS 10
 
 
-
+char newString(void);
 
 int main() {
-    int c, i, numAccounts, menuSelect;
+    int c = 1, i, numAccounts, menuSelect;
     char user[6], pass[7], a_user[6] = "admin", a_pass[7] = "admin", c_user[6] = "guest", c_pass[7] = "guest";
     struct cData
     {
@@ -27,17 +28,13 @@ int main() {
     numAccounts = 0;
 
     for(i = 0; i < MAX_ACCS; i++) {
-        while (fscanf(file, "%s %s %s %s %s %s %s %lf", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, &accounts[i].balance) != EOF) {
-            printf("%s %s %s %s %s %s %s %.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
-            numAccounts++;
-        }
+        fscanf(file, "%s %s %s %s %s %s %s %lf", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, &accounts[i].balance);
+        printf("%s %s %s %s %s %s %s %.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
+        numAccounts++;
     }
 
-    c = 1;
-
     while(c == 1) {
-        i = 0;
-        for (i; i < numAccounts; i++) {
+        for (i = 0; i < numAccounts; i++) {
             printf("\nWelcome to Online Banking/ATM System\n====================================\n");
             printf("Enter your Customer/Admin ID: ");
             scanf("%s", user);
@@ -86,9 +83,10 @@ int main() {
                     printf("Customer Account created\n");
                     break;
                 case 2:
-                    printf("Customer Account created\n");
+                    ViewInfo(accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone);
                     break;
                 case 3:
+                    ViewBalance(accounts[i].balance);
                     break;
                 case 4:
                     break;
