@@ -2,13 +2,13 @@
 1492628655 source:c:\users\jacob\desktop\c language\project\administrator.c
 	"administrator.h"
 
-1493226995 c:\users\jacob\desktop\c language\project\administrator.h
+1493665010 c:\users\jacob\desktop\c language\project\administrator.h
 
 1493063245 source:c:\users\jacob\desktop\c language\project\customer.c
 	<stdio.h>
 	<stdlib.h>
 
-1493230417 source:c:\users\jacob\desktop\c language\project\main.c
+1493940845 source:c:\users\jacob\desktop\c language\project\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
