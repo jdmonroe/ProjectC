@@ -1,11 +1,7 @@
+#include "Struct.h"
 #ifndef ADMINISTRATOR_H_INCLUDED
 #define ADMINISTRATOR_H_INCLUDED
 
-void CreateAccount(file);
-void ChangePassword(char password);
-char ViewInfo(file);
-void DeleteInfo(file);
-char ShowTop(file);
-char ShowAll(file);
+void CreateAccount(struct cData (*)[10]);
 
 #endif // ADMINISTRATOR_H_INCLUDED

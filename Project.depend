@@ -22,3 +22,29 @@
 
 1493953772 c:\users\jacob\desktop\c language\project\customer.h
 
+1494197323 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.c
+	<stdio.h>
+	<stdlib.h>
+	"administrator.h"
+	"Struct.h"
+
+1494197894 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.h
+	"Struct.h"
+
+1494197805 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\banksystems.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Struct.h"
+	"Customer.h"
+	"administrator.h"
+
+1494041875 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.h
+
+1494197343 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.c
+	<stdio.h>
+	<stdlib.h>
+	"Customer.h"
+
+1494186678 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\struct.h
+

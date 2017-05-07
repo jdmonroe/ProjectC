@@ -1,26 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "Struct.h"
 #include "Customer.h"
+#include "administrator.h"
 #define MAX_ACCS 10
 
 
 char newString(void);
-
 int main() {
     int c = 1, i, numAccounts, menuSelect;
-    char user[6], pass[7], a_user[6] = "admin", a_pass[7] = "admin", c_user[6] = "guest", c_pass[7] = "guest";
-    struct cData
-    {
-        char fName[9];
-        char lName[9];
-        char city[11];
-        char state[3];
-        char phone[8];
-        char id[6];
-        char pass[7];
-        double balance;
-    };
+    char user[6], pass[7], a_user[6] = "admin", a_pass[7] = "admin";
+
     struct cData accounts[MAX_ACCS];
     FILE *file;
     file = fopen("CustomerData.txt", "r");
@@ -48,7 +39,7 @@ int main() {
                 scanf("%d", &menuSelect);
                 switch (menuSelect) {
                 case 1:
-                    printf("Customer Account created\n");
+                    CreateAccount(&accounts);
                     break;
                 case 2:
                     printf("Customer Account created\n");
@@ -89,10 +80,16 @@ int main() {
                     ViewBalance(accounts[i].balance);
                     break;
                 case 4:
+                    Deposit(&accounts[i].balance);
+                    printf("New Balance: %.2lf",accounts[i].balance);
                     break;
                 case 5:
                     break;
                 case 6:
+
+                    Withdraw(&accounts[i].balance);
+                    printf("Remaining Balance: %.2lf",accounts[i].balance);
+                    i=-1;
                     break;
                 case 7:
                     c = 0;
@@ -105,9 +102,8 @@ int main() {
 
             else {
                 printf("Invalid User ID or Password! Try Again!\n");
-                i--;
+                i=-1;
             }
         }
     }
-}
-
+return 0;}
