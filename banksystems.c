@@ -7,7 +7,7 @@
 #define MAX_ACCS 10
 
 
-char newString(void);
+int numAccounts;
 int main() {
     int c = 1, i, numAccounts, menuSelect;
     char user[6], pass[7], a_user[6] = "admin", a_pass[7] = "admin";
