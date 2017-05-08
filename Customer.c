@@ -29,6 +29,19 @@ void ViewBalance(struct cData accounts)
 {
     printf("%.2lf", accounts.balance);
 }
+void Deposit(double* balance){
+    double amount=0;
+    while (1){
+    printf("How much do you want to Deposit?");
+    scanf("%lf",&amount);
+    if (amount>0){
+        *(balance)+=amount;
+        break;
+    }else{
+        printf("\nNegative Amount Not Allowed\n");
+    }
+    }
+}
 void Transfer(struct cData accounts[], int numAccounts, int origAcc)
 {
     char accountID[6];

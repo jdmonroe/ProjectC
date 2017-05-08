@@ -21,6 +21,6 @@ void ChangePass(char* pass);
 void ViewInfo(struct cData accounts);
 void ViewBalance(struct cData accounts);
 void Tranfer(struct cData accounts, int numAccounts, int i);
-
+void Deposit(double* balance);
 
 #endif // CUSTOMER_H_INCLUDED
