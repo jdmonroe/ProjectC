@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1492628655 source:c:\users\jacob\desktop\c language\project\administrator.c
+1494221939 source:c:\users\jacob\desktop\c language\project\administrator.c
 	"administrator.h"
+	"Customer.h"
 
-1493947597 c:\users\jacob\desktop\c language\project\administrator.h
+1494221895 c:\users\jacob\desktop\c language\project\administrator.h
 
-1493953804 source:c:\users\jacob\desktop\c language\project\customer.c
+1494225738 source:c:\users\jacob\desktop\c language\project\customer.c
 	<stdio.h>
 	<stdlib.h>
 	"Customer.h"
@@ -14,11 +15,11 @@
 	<stdlib.h>
 	<string.h>
 
-1493953772 source:c:\users\jacob\desktop\c language\project\banksystems.c
+1494228221 source:c:\users\jacob\desktop\c language\project\banksystems.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Customer.h"
 
-1493953772 c:\users\jacob\desktop\c language\project\customer.h
+1494225738 c:\users\jacob\desktop\c language\project\customer.h
 

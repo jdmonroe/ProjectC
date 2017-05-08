@@ -3,7 +3,7 @@
 
 void CreateAccount(file);
 void ChangePassword(char password);
-char ViewInfo(file);
+//char ViewInfo(file);
 void DeleteInfo(file);
 char ShowTop(file);
 char ShowAll(file);
