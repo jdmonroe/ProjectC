@@ -1,11 +1,10 @@
 #ifndef ADMINISTRATOR_H_INCLUDED
 #define ADMINISTRATOR_H_INCLUDED
+#include "Customer.h"
 
-void CreateAccount(struct cData account[],int* AccNum);
-void changePass(char * adminP[7]);
-//char ViewInfo(file);
+void CreateAccount(struct cData accounts[],int* AccNum);
+void ViewAcc(struct cData account[], int numAcc);
 void DeleteInfo(file);
-char ShowTop(file);
-char ShowAll(file);
-
+void ShowTop(file);
+void ShowAll(file);
 #endif // ADMINISTRATOR_H_INCLUDED

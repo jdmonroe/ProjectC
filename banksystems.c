@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Customer.h"
+#include "administrator.h"
 
 
 
-
-char newString(void);
+void Print(struct cData accounts[], int numAccounts);
 
 int main() {
     struct cData accounts[MAX_ACCS];
-    int c = 1, i, numAccounts, menuSelect;
+    int c = 1, i, numAccounts, menuSelect, check;
     char user[6], pass[7], a_user[6] = "admin", a_pass[7] = "admin", c_user[6] = "guest", c_pass[7] = "guest";
     FILE *file;
     file = fopen("CustomerData.txt", "r");
@@ -19,22 +19,17 @@ int main() {
 
     for(i = 0; i < MAX_ACCS; i++) {
         fscanf(file, "%s %s %s %s %s %s %s %lf", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, &accounts[i].balance);
-        printf("%s %s %s %s %s %s %s %.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
+        //printf("%s %s %s %s %s %s %s %.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
         numAccounts++;
     }
-    for(i = 0; i < MAX_ACCS; i++) {
-        printf("%s %s %s %s %s %s %s %.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
-    }
 
-    while(c == 1) {
+    while(c <= 1) {
             c = 2;
             printf("\nWelcome to Online Banking/ATM System\n====================================\n");
             printf("Enter your Customer/Admin ID: ");
-            getchar();
-            fgets(user, 6, stdin);
-            getchar();
+            gets(user);
             printf("Enter your Customer/Admin Password: ");
-            scanf("%s", pass);
+            gets(pass);
         while(c == 2){
             c = 1;
             for (i = 0; i < numAccounts; i++) {
@@ -46,16 +41,23 @@ int main() {
                     scanf("%d", &menuSelect);
                     switch (menuSelect) {
                     case 1:
-                        printf("Customer Account created\n");
+                        CreateAccount(accounts, &numAccounts);
+                        i = -1;
                         break;
                     case 2:
-                        printf("Customer Account created\n");
+                        ChangePass(accounts[i].pass);
+                        i = -1;
                         break;
                     case 3:
+                        ViewAcc(accounts, numAccounts);
+                        i = -1;
                         break;
                     case 4:
+
                         break;
                     case 5:
+                        DeleteAccount(accounts, &numAccounts);
+                        Print(accounts, numAccounts);
                         break;
                     case 6:
                         break;
@@ -90,6 +92,7 @@ int main() {
                         i = -1;
                         break;
                     case 4:
+                        Deposit(&accounts[i].balance);
                         i = -1;
                         break;
                     case 5:
@@ -97,6 +100,7 @@ int main() {
                         i = -1;
                         break;
                     case 6:
+                        Withdraw(&accounts[i].balance);
                         i = -1;
                         break;
                     case 7:
@@ -117,4 +121,13 @@ int main() {
         }
     }
 }
+
+void Print(struct cData accounts[], int numAccounts)
+{
+    int i;
+    for(i = 0; i < numAccounts; i++) {
+        printf("%s %s %s %s %s %s %s %.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
+    }
+}
+
 

@@ -1,6 +1,6 @@
 #ifndef CUSTOMER_H_INCLUDED
 #define CUSTOMER_H_INCLUDED
-#define MAX_ACCS 10
+#define MAX_ACCS 11
 
 
 struct cData
@@ -17,10 +17,11 @@ struct cData
 
 extern struct cData accounts[MAX_ACCS];
 
-void ChangePass(char* pass);
+void ChangePass(char* pass[]);
 void ViewInfo(struct cData accounts);
 void ViewBalance(struct cData accounts);
-void Tranfer(struct cData accounts, int numAccounts, int i);
+void Tranfer(struct cData accounts[], int numAccounts, int i);
 void Deposit(double* balance);
+void Withdraw(double* balance);
 
 #endif // CUSTOMER_H_INCLUDED

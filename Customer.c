@@ -3,7 +3,7 @@
 #include "Customer.h"
 
 
-void ChangePass(char* pass)
+void ChangePass(char* pass[])
 {
     char newPass[7];
     while(1){
@@ -29,7 +29,8 @@ void ViewBalance(struct cData accounts)
 {
     printf("%.2lf", accounts.balance);
 }
-void Deposit(double* balance){
+void Deposit(double* balance)
+{
     double amount=0;
     while (1){
     printf("How much do you want to Deposit?");
@@ -37,7 +38,25 @@ void Deposit(double* balance){
     if (amount>0){
         *(balance)+=amount;
         break;
-    }else{
+    }
+
+    else{
+        printf("\nNegative Amount Not Allowed\n");
+    }
+    }
+}
+void Withdraw(double* balance)
+{
+    double amount=0;
+    while (1){
+    printf("How much do you want to Deposit?");
+    scanf("%lf",&amount);
+    if (amount > 0 && (*balance - amount) > 0){
+        *(balance)-=amount;
+        break;
+    }
+
+    else{
         printf("\nNegative Amount Not Allowed\n");
     }
     }
