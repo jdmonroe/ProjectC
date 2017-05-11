@@ -5,9 +5,13 @@
 #include "administrator.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void countlines(FILE* fp,int* NumLines);
 void ClearScreen(void);
 void Print(struct cData accounts[], int numAccounts);
+=======
+
+>>>>>>> parent of 86a1976... Customer Menu Complete
 =======
 
 >>>>>>> parent of 86a1976... Customer Menu Complete
@@ -16,8 +20,14 @@ void Print(struct cData accounts[], int numAccounts);
 
 int main() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     int c = 1, i, numAccounts, menuSelect,w=1,NumLines;
     char user[6], pass[7], a_user[6] = "admin", a_pass[7] = "admin";
+=======
+    struct cData accounts[MAX_ACCS];
+    int c = 1, i, numAccounts, menuSelect, check;
+    char user[6], pass[7], a_user[6] = "admin", a_pass[7] = "admin", c_user[6] = "guest", c_pass[7] = "guest";
+>>>>>>> parent of 86a1976... Customer Menu Complete
 =======
     struct cData accounts[MAX_ACCS];
     int c = 1, i, numAccounts, menuSelect, check;
@@ -135,6 +145,7 @@ int main() {
         }
     }
 }
+<<<<<<< HEAD
 
 void countlines(FILE* fp,int*NumLines){
     int lines=0;
@@ -146,6 +157,8 @@ void countlines(FILE* fp,int*NumLines){
 }}
     *NumLines=lines;
 }
+=======
+>>>>>>> parent of 86a1976... Customer Menu Complete
 
 void Print(struct cData accounts[], int numAccounts)
 {
