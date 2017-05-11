@@ -17,10 +17,10 @@ struct cData
 
 extern struct cData accounts[MAX_ACCS];
 
-void ChangePass(char* pass[]);
+void ChangePass(char pass[]);
 void ViewInfo(struct cData accounts);
 void ViewBalance(struct cData accounts);
-void Tranfer(struct cData accounts[], int numAccounts, int i);
+void Transfer(struct cData accounts[], int numAccounts, int origAcc);
 void Deposit(double* balance);
 void Withdraw(double* balance);
 

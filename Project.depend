@@ -23,23 +23,30 @@
 
 1494225738 c:\users\jacob\desktop\c language\project\customer.h
 
-1494264562 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.c
-	"administrator.h"
-	"Customer.h"
-
-1494264562 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.h
-
-1494264562 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.h
-
-1494264562 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\banksystems.c
+1494452733 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"administrator.h"
 	"Customer.h"
 
-1494264562 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.c
+1494452971 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.h
+	"Customer.h"
+
+1494452375 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.h
+
+1494469057 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\banksystems.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"Customer.h"
+	"administrator.h"
+
+1494467017 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
 	"Customer.h"
 
 1494276689 source:c:\users\jacob\desktop\c language\project\projectc\administrator.c

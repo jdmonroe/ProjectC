@@ -4,7 +4,5 @@
 
 void CreateAccount(struct cData accounts[],int* AccNum);
 void ViewAcc(struct cData account[], int numAcc);
-void DeleteInfo(file);
-void ShowTop(file);
-void ShowAll(file);
+void DeleteAccount(struct cData accounts[], int* AccNum);
 #endif // ADMINISTRATOR_H_INCLUDED
