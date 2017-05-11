@@ -5,21 +5,23 @@
 #include "Customer.h"
 #include "administrator.h"
 
-
+void countlines(FILE* fp,int* NumLines);
 void ClearScreen(void);
 void Print(struct cData accounts[], int numAccounts);
 
 
 int main() {
-    struct cData accounts[MAX_ACCS];
-    int c = 1, i, numAccounts, menuSelect,w=1;
+    int c = 1, i, numAccounts, menuSelect,w=1,NumLines;
     char user[6], pass[7], a_user[6] = "admin", a_pass[7] = "admin";
     FILE *file;
-    file = fopen("CustomerData.txt", "r");
-
     numAccounts = 0;
-
-    for(i = 0; i < MAX_ACCS; i++) {
+    file = fopen("CustomerData.txt", "r");
+    countlines(file,&NumLines);
+    printf("%d\n\n\n",NumLines);
+    fclose(file);
+    struct cData *accounts=(struct cData*)malloc(sizeof(struct cData)*(NumLines));
+    file = fopen("CustomerData.txt", "r");
+    for(i = 0; i < NumLines; i++) {
         fscanf(file, "%s %s %s %s %s %s %s %lf", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, &accounts[i].balance);
         printf("%s %s %s %s %s %s %s %.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
         numAccounts++;
@@ -138,6 +140,17 @@ int main() {
         }
     }
 return 0;}
+
+void countlines(FILE* fp,int*NumLines){
+    int lines=0;
+    char ch;
+    while(!feof(fp)){
+        ch = fgetc(fp);
+        if(ch == '\n'){
+            lines++;
+}}
+    *NumLines=lines;
+}
 
 void Print(struct cData accounts[], int numAccounts)
 {
