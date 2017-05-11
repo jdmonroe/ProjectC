@@ -1,10 +1,10 @@
-Chris Mabry Houston TX 8587889 00001 77084
-Raymond Spencer Bangor ME 9742011 00002 04401
-Kristin Pierce Seattle WA 5558721 00003 98122
-John Russell Lexington NC 5966424 00004 27292
-David Halle Elmhurst IL 6888070 00005 60126
-Janice Cote Tampa FL 5490400 00006 33602
-Thelma Jones Tampa FL 2137983 00007 33605
-Deborah Gilbert Houston TX 9124814 00008 77027
-Harold Center Warrior AL 6475537 00009 35180
-Stephen Morones Bedford MA 4582573 00010 01730
+Chris Mabry Houston TX 8587889 10001 77084 100.43
+Raymond Spencer Bangor ME 9742011 10002 04401 145.65
+Kristin Pierce Seattle WA 5558721 10003 98122 167.09
+John Russell Lexington NC 5966424 10004 27292 248.24
+David Halle Elmhurst IL 6888070 10005 60126 980.92
+Janice Cote Tampa FL 5490400 10006 33602 94.02
+Thelma Jones Tampa FL 2137983 10007 33605 1209.05
+Deborah Gilbert Houston TX 9124814 10008 77027 1239.00
+Harold Center Warrior AL 6475537 10009 35180 83.12
+Stephen Morones Bedford MA 4582573 10010 01730 40.54

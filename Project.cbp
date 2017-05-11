@@ -34,11 +34,12 @@
 		<Unit filename="Customer.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Customer.h" />
 		<Unit filename="administrator.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="administrator.h" />
-		<Unit filename="main.c">
+		<Unit filename="banksystems.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

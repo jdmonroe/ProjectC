@@ -1,6 +1,72 @@
 # depslib dependency file v1.0
-1493063070 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\projectc\main.c
+1494221939 source:c:\users\jacob\desktop\c language\project\administrator.c
+	"administrator.h"
+	"Customer.h"
+
+1494221895 c:\users\jacob\desktop\c language\project\administrator.h
+
+1494225738 source:c:\users\jacob\desktop\c language\project\customer.c
+	<stdio.h>
+	<stdlib.h>
+	"Customer.h"
+
+1493949663 source:c:\users\jacob\desktop\c language\project\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+
+1494228221 source:c:\users\jacob\desktop\c language\project\banksystems.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Customer.h"
+
+1494225738 c:\users\jacob\desktop\c language\project\customer.h
+
+1494452733 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"administrator.h"
+	"Customer.h"
+
+1494452971 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.h
+	"Customer.h"
+
+1494452375 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.h
+
+1494469057 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\banksystems.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"Customer.h"
+	"administrator.h"
+
+1494467017 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Customer.h"
+
+1494276689 source:c:\users\jacob\desktop\c language\project\projectc\administrator.c
+	"administrator.h"
+	"Customer.h"
+
+1494276544 c:\users\jacob\desktop\c language\project\projectc\administrator.h
+	"Customer.h"
+
+1494276724 c:\users\jacob\desktop\c language\project\projectc\customer.h
+
+1494275971 source:c:\users\jacob\desktop\c language\project\projectc\customer.c
+	<stdio.h>
+	<stdlib.h>
+	"Customer.h"
+
+1494277098 source:c:\users\jacob\desktop\c language\project\projectc\banksystems.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Customer.h"
+	"administrator.h"
 
