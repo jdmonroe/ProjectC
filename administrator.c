@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "administrator.h"
 #include "Customer.h"
 
@@ -22,14 +19,14 @@ void CreateAccount(struct cData accounts[], int* AccNum)
     printf("Password:");
     scanf("%s",accounts[*(AccNum)].pass);
     printf("Balance:");
-    scanf("%lf",&accounts[*AccNum].balance);
+    scanf("%lf",accounts[*(AccNum)].balance);
 
 }
 void ViewAcc(struct cData accounts[],int numAcc){
     int i,o=0;
     char AAcc[7];
     printf("Enter the Account ID you wish to view: ");
-    scanf("%s",AAcc);
+    scanf("%d",AAcc);
     for(i=0;i<numAcc;i++){
         if(strcmp(AAcc,accounts[i].id)==0){
             printf("%s %s %s %s %s %s %s %.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
@@ -43,7 +40,7 @@ void ViewAcc(struct cData accounts[],int numAcc){
 void DeleteAccount(struct cData accounts[], int* AccNum)
 {
     char deleted[6];
-    int i,o=0;
+    int i;
 
     printf("\nEnter the ID of the account to be deleted: ");
     scanf("%s", deleted);
@@ -51,12 +48,11 @@ void DeleteAccount(struct cData accounts[], int* AccNum)
     for (i = 0; i < *AccNum; i++) {
         if (strcmp(accounts[i].id, deleted) == 0) {
             printf("%d\n", i);
-            i=o;
             break;
         }
     }
     printf("%d\n", i);
-    for (i=o; i < *AccNum - 1; i++) {
+    for (i; i < *AccNum - 1; i++) {
         printf("%d\n", i);
         accounts[i] = accounts[i + 1];
     }

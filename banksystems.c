@@ -1,18 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <conio.h>
 #include "Customer.h"
 #include "administrator.h"
 
+<<<<<<< HEAD
 void countlines(FILE* fp,int* NumLines);
 void ClearScreen(void);
 void Print(struct cData accounts[], int numAccounts);
+=======
 
+>>>>>>> parent of 86a1976... Customer Menu Complete
+
+void Print(struct cData accounts[], int numAccounts);
 
 int main() {
+<<<<<<< HEAD
     int c = 1, i, numAccounts, menuSelect,w=1,NumLines;
     char user[6], pass[7], a_user[6] = "admin", a_pass[7] = "admin";
+=======
+    struct cData accounts[MAX_ACCS];
+    int c = 1, i, numAccounts, menuSelect, check;
+    char user[6], pass[7], a_user[6] = "admin", a_pass[7] = "admin", c_user[6] = "guest", c_pass[7] = "guest";
+>>>>>>> parent of 86a1976... Customer Menu Complete
     FILE *file;
     numAccounts = 0;
     file = fopen("CustomerData.txt", "r");
@@ -23,19 +33,17 @@ int main() {
     file = fopen("CustomerData.txt", "r");
     for(i = 0; i < NumLines; i++) {
         fscanf(file, "%s %s %s %s %s %s %s %lf", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, &accounts[i].balance);
-        printf("%s %s %s %s %s %s %s %.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
+        //printf("%s %s %s %s %s %s %s %.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
         numAccounts++;
     }
 
     while(c <= 1) {
-            w=1;
             c = 2;
-            printf("Welcome to Online Banking/ATM System\n====================================\n");
+            printf("\nWelcome to Online Banking/ATM System\n====================================\n");
             printf("Enter your Customer/Admin ID: ");
             gets(user);
             printf("Enter your Customer/Admin Password: ");
             gets(pass);
-            system("cls");
         while(c == 2){
             c = 1;
             for (i = 0; i < numAccounts; i++) {
@@ -78,68 +86,55 @@ int main() {
                 }
 
                 else if (strcmp(user, accounts[i].id) == 0 && strcmp(pass, accounts[i].pass) == 0) {
-                while(w==1){
-                    printf("Welcome to Online Banking/ATM System\n====================================\n");
+                    printf("\nWelcome to Online Banking/ATM System\n====================================\n");
                     printf("-------------------------\nCustomer Menu\n-------------------------\n\n");
                     printf("1) Change Password\n2) View Customer information\n3) View Balance\n4) Make a Deposit\n");
                     printf("5) Transfer Money\n6) Withdraw Money\n7) Exit\n");
                     scanf("%d", &menuSelect);
-                    system("cls");
                     switch (menuSelect) {
                     case 1:
                         ChangePass(accounts[i].pass);
-                        w=2;
-                        c=0;
-                        printf("Your Password has changed you will have to re-log in to continue\n");
-                        printf("================================================================\n");
-                        ClearScreen();
+                        printf("%s", accounts[i].pass);
+                        i = -1;
                         break;
                     case 2:
                         ViewInfo(accounts[i]);
-                        ClearScreen();
+                        i = -1;
                         break;
                     case 3:
                         ViewBalance(accounts[i]);
-                        ClearScreen();
+                        i = -1;
                         break;
                     case 4:
                         Deposit(&accounts[i].balance);
-                        ClearScreen();
+                        i = -1;
                         break;
                     case 5:
                         Transfer(accounts, numAccounts, i);
-                        ClearScreen();
+                        i = -1;
                         break;
                     case 6:
                         Withdraw(&accounts[i].balance);
-                        ClearScreen();
+                        i = -1;
                         break;
                     case 7:
                         c = 0;
-                        w=2;
-                        getchar();
                         break;
                     default:
-                        printf("<><><><><><><>\nInvalid Input!\n<><><><><><><>\n");
+                        printf("Invalid Input!\n");
                     }
-                }}
+                }
             }
                 if (c == 1) {
-                    printf("<><><><><><><><><><><><><><><><><><><><><>\n");
-                    printf("Invalid User ID or Password! Try again!\n");
-                    printf("<><><><><><><><><><><><><><><><><><><><><>\n\n");
+                    printf("\nInvalid User ID or Password! Try again!\n");
                 }
 
                 else {
-                    i=-1;
-                    system("cls");
-                    printf("<><><><><><><><><><><><><><><><><><><><><><><><><><><><>\n");
-                    printf("You have been logged out! Close the program to exit.\n");
-                    printf("<><><><><><><><><><><><><><><><><><><><><><><><><><><><>\n\n");
+                    printf("You have been logged out! Close the program to exit.");
                 }
         }
     }
-return 0;}
+}
 
 void countlines(FILE* fp,int*NumLines){
     int lines=0;
@@ -159,13 +154,5 @@ void Print(struct cData accounts[], int numAccounts)
         printf("%s %s %s %s %s %s %s %.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
     }
 }
-void ClearScreen(void){
-    while (1){
-        if (getchar()!='/n'){
-            printf("Enter Any Key to continue ");
-            while(getchar()!='\n');
-            system("cls");
-            break;
-        }
-    }
-}
+
+

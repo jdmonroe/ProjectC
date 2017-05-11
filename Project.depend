@@ -23,30 +23,31 @@
 
 1494225738 c:\users\jacob\desktop\c language\project\customer.h
 
-1494452733 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
+1494264562 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.c
 	"administrator.h"
 	"Customer.h"
 
-1494452971 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.h
-	"Customer.h"
+1494264562 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.h
 
-1494452375 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.h
+1494264562 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.h
 
+<<<<<<< HEAD
 1494527002 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\banksystems.c
+=======
+1494264562 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\banksystems.c
+>>>>>>> parent of 86a1976... Customer Menu Complete
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	<conio.h>
 	"Customer.h"
-	"administrator.h"
 
+<<<<<<< HEAD
 1494473983 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.c
+=======
+1494264562 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.c
+>>>>>>> parent of 86a1976... Customer Menu Complete
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
 	"Customer.h"
 
 1494276689 source:c:\users\jacob\desktop\c language\project\projectc\administrator.c
