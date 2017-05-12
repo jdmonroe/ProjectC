@@ -1,6 +1,6 @@
 #ifndef CUSTOMER_H_INCLUDED
 #define CUSTOMER_H_INCLUDED
-#define MAX_ACCS 11
+#define MAX_ACCS 100
 
 
 struct cData

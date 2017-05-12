@@ -49,24 +49,30 @@
 	<string.h>
 	"Customer.h"
 
-1494276689 source:c:\users\jacob\desktop\c language\project\projectc\administrator.c
-	"administrator.h"
-	"Customer.h"
-
-1494276544 c:\users\jacob\desktop\c language\project\projectc\administrator.h
-	"Customer.h"
-
-1494276724 c:\users\jacob\desktop\c language\project\projectc\customer.h
-
-1494275971 source:c:\users\jacob\desktop\c language\project\projectc\customer.c
-	<stdio.h>
-	<stdlib.h>
-	"Customer.h"
-
-1494277098 source:c:\users\jacob\desktop\c language\project\projectc\banksystems.c
+1494553312 source:c:\users\jacob\desktop\c language\project\projectc\administrator.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<ctype.h>
+	"administrator.h"
+	"Customer.h"
+
+1494551022 c:\users\jacob\desktop\c language\project\projectc\administrator.h
+	"Customer.h"
+
+1494539271 c:\users\jacob\desktop\c language\project\projectc\customer.h
+
+1494474143 source:c:\users\jacob\desktop\c language\project\projectc\customer.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Customer.h"
+
+1494553740 source:c:\users\jacob\desktop\c language\project\projectc\banksystems.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
 	"Customer.h"
 	"administrator.h"
 
