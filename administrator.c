@@ -1,17 +1,18 @@
+//Source file for all of the administrator menu functions
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include "administrator.h"
 #include "Customer.h"
-
+//CreateAccount allows administrator to add a new account to file, while making sure inputs are correct
 void CreateAccount(struct cData accounts[], int* AccNum)
 {
     char first[9], last[9], city[11], state[3], phone[8], id[6], pass[7];
     double balance;
 
 
-
+//Each part contains a while loop to verify input, then changes value once it fits format
     while (1){
         printf("First Name: ");
         scanf("%s", first);
@@ -19,7 +20,6 @@ void CreateAccount(struct cData accounts[], int* AccNum)
         if (strlen(first) <= 8){
             strcpy(accounts[*AccNum].fName, first);
             break;
-
         }
         else{
             printf("Must be no more than 8 characters!\n");
@@ -104,13 +104,14 @@ void CreateAccount(struct cData accounts[], int* AccNum)
         }
     }
 }
-
+//ViewAcc allows administrator to view an account by typing the account's ID number
 void ViewAcc(struct cData accounts[],int numAcc){
-    int i,o=0;
+    int i,o = 0;
     char AAcc[7];
     printf("Enter the Account ID you wish to view: ");
     scanf("%s",AAcc);
     system("cls");
+//For loop cycles through structure to find the account ID that was typed in, will give warning if ID is not found
     for(i=0;i<numAcc;i++){
         if(strcmp(AAcc,accounts[i].id)==0){
             printf("First Name:\t%s\nLast Name:\t%s\nCity:\t\t%s\nState:\t\t%s\nPhone:\t\t%s\nID:\t\t%s\nPassword:\t%s\nBalance:\t%.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
@@ -121,23 +122,11 @@ void ViewAcc(struct cData accounts[],int numAcc){
                  }
     }
 }
+//TopFive show the administrator the Top 5 accounts based on their balance
 void TopFive(struct cData accounts[], int AccNum)
 {
     int i, j;
-    struct temp
-    {
-        char fName[9];
-        char lName[9];
-        char city[11];
-        char state[3];
-        char phone[8];
-        char id[6];
-        char pass[7];
-        double balance;
-    };
-
-    struct temp;
-
+//Bubble sort is used to find the highest account balances, then prints the top 5 accounts
     for (i = 0; i < AccNum - 1; i++){
         for (j = 0; j < AccNum - i - 1; j++) {
             if (accounts[j].balance < accounts[j + 1].balance) {
@@ -155,12 +144,14 @@ void TopFive(struct cData accounts[], int AccNum)
         printf("%d)%s %s %s %s %s %.2lf\n\n",i+1,accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone,accounts[i].balance);
     }
 }
+//ChangeInfo allows administrator to change any info of a specific account
 void ChangeInfo(struct cData accounts[], int AccNum){
     char first[9], last[9], city[11], state[3], phone[8], id[6], pass[7];
     double balance;
     int choice, i,o=0;
     char changed[6];
-    while (o==0){
+//While loop to verify the account ID that is entered
+    while (o == 0){
             printf("\nEnter the ID of the account to be changed: ");
             scanf("%s", changed);
             for (i = 0;i < AccNum; i++) {
@@ -169,11 +160,11 @@ void ChangeInfo(struct cData accounts[], int AccNum){
                     o=1;
                     break;
         }
-    }      if (o==0){
+    }      if (o == 0){
             printf("That Account Doesn't Exist\n");}
 }
 
-
+//Using a switch/case we can change individual aspects of a customer's account and each are input validated
     system("cls");
     printf("What do you want to change?");
     printf("1)First Name\n2)Last Name\n3)City\n4)State\n5)Phone Number\n6)ID\n7)Password\n8)Balance");
@@ -295,34 +286,44 @@ void ChangeInfo(struct cData accounts[], int AccNum){
 
 }
 }
+//ViewNames allows administrator to input a letter and view accounts that have the last name that starts with that letter in alphabetical order
 void ViewNames(struct cData accounts[], int AccNum)
 {
     char userInput;
-    int i;
+    int i, o = 0;
     printf("Please input the a letter to list accounts by: ");
     scanf("%s", &userInput);
     userInput = toupper(userInput);
-    for (i = 0; i < AccNum; i++){
-        if (accounts[i].lName[0] == userInput) {
-            printf("%s, %s %s %s %s %s %s %.2lf\n", accounts[i].lName, accounts[i].fName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
-        }else{
-            printf("No Accounts With that letter");
-        }
+    while (o == 0) {
+		for (i = 0; i < AccNum; i++){
+			if (accounts[i].lName[0] == userInput) {
+				printf("%s, %s %s %s %s %s %s %.2lf\n", accounts[i].lName, accounts[i].fName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
+			}
+		}
+		if (o == 1) {
+			printf("No Accounts With that letter");
+		}
     }
 }
+//DeleteAccount allows administrator to remove an account by account ID
 void DeleteAccount(struct cData accounts[], int* AccNum)
 {
     char deleted[6];
-    int i;
+    int i, o = 0;
+	while (o == 0) {
+		printf("\nEnter the ID of the account to be deleted: ");
+		scanf("%s", deleted);
 
-    printf("\nEnter the ID of the account to be deleted: ");
-    scanf("%s", deleted);
-
-    for (i = 0; i < *AccNum; i++) {
-        if (strcmp(accounts[i].id, deleted) == 0) {
-            break;
-        }
-    }
+		for (i = 0; i < *AccNum; i++) {
+			if (strcmp(accounts[i].id, deleted) == 0) {\
+				o = 1;
+				break;
+			}
+		}
+		if ( o == 1) {
+			printf("That Account Doesn't Exist\n");
+		}
+	}
     for (i; i < *AccNum; i++) {
         accounts[i] = accounts[i + 1];
     }
