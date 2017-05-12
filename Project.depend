@@ -23,7 +23,7 @@
 
 1494225738 c:\users\jacob\desktop\c language\project\customer.h
 
-1494561681 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.c
+1494567288 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -31,10 +31,10 @@
 	"administrator.h"
 	"Customer.h"
 
-1494561484 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.h
+1494567288 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\administrator.h
 	"Customer.h"
 
-1494553956 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.h
+1494567288 c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.h
 
 1494561484 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\banksystems.c
 	<stdio.h>
@@ -44,7 +44,7 @@
 	"Customer.h"
 	"administrator.h"
 
-1494553956 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.c
+1494567288 source:c:\users\manue_000\onedrive\documents\2016-2017\spring 2017\cs 1412 lab\projectc\customer.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
