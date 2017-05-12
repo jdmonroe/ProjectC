@@ -9,14 +9,18 @@
 void countlines(FILE* fp,int* NumLines);
 void ClearScreen(void);
 void Print(struct cData accounts[], int numAccounts);
+void WriteFile(FILE *file, struct cData accounts[], int numAccounts);
 
 
 int main() {
     struct cData accounts[MAX_ACCS];
     int c = 1, i, numAccounts, menuSelect, w = 1, NumLines;
-    char user[6], pass[7], a_user[6] = "admin", a_pass[7] = "admin";
-    FILE *file;
-    file = fopen("CustomerData.txt", "r");
+    char user[6], pass[7], a_user[6] = "admin", a_pass[7];
+    FILE *file,*fp2;
+    fp2 = fopen("Admin.txt","r+");
+    fscanf(fp2,"%s",a_pass);
+    fclose(fp2);
+    file = fopen("CustomerData.txt", "r+");
     countlines(file,&NumLines);
     fclose(file);
     file = fopen("CustomerData.txt", "r");
@@ -43,37 +47,50 @@ int main() {
             for (i = 0; i < numAccounts; i++) {
                 if (strcmp(user, a_user) == 0 && strcmp(pass, a_pass) == 0) {
                     while (w == 1) {
-                        printf("\nWelcome to Online Banking/ATM System\n====================================\n");
+                        printf("Welcome to Online Banking/ATM System\n====================================\n");
                         printf("-------------------------\nAdministrator Menu\n-------------------------\n\n");
                         printf("1) Create Customer account\n2) Change Password\n3) View Customer Info\n4) Change Customer Info\n");
                         printf("5) Delete Customer account\n6) Show Top 5 accounts\n7) Show customer accounts alphabetically\n8) Exit\n");
                         scanf("%d", &menuSelect);
+                        system("cls");
                         switch (menuSelect) {
                         case 1:
                             CreateAccount(accounts, &numAccounts);
+                            ClearScreen();
                             i = -1;
                             break;
                         case 2:
                             w = 2;
                             c = 0;
-                            ChangePass(accounts[i].pass);
+                            ChangePass(a_pass);
+                            fp2 = fopen("Admin.txt","w+");
+                            fprintf(fp2,"%s",a_pass);
+                            fclose(fp2);
+                            printf("Your Password has changed you will have to re-log in to continue\n");
+                            printf("================================================================\n");
+                            ClearScreen();
                             i = -1;
                             break;
                         case 3:
                             ViewAcc(accounts, numAccounts);
+                            ClearScreen();
                             i = -1;
                             break;
                         case 4:
+                            ChangeInfo(accounts, numAccounts);
                             break;
                         case 5:
                             DeleteAccount(accounts, &numAccounts);
                             Print(accounts, numAccounts);
+                            ClearScreen();
                             break;
                         case 6:
                             TopFive(accounts, numAccounts);
+                            ClearScreen();
                             break;
                         case 7:
                             ViewNames(accounts, numAccounts);
+                            ClearScreen();
                             break;
                         case 8:
                             c = 0;
@@ -142,6 +159,7 @@ int main() {
 
                 else {
                     i=-1;
+                    WriteFile(file, accounts, numAccounts);
                     system("cls");
                     printf("<><><><><><><><><><><><><><><><><><><><><><><><><><><><>\n");
                     printf("You have been logged out! Close the program to exit.\n");
@@ -179,4 +197,18 @@ void ClearScreen(void){
             break;
         }
     }
+}
+void WriteFile(FILE *file, struct cData accounts[], int numAccounts)
+{
+    int i;
+
+    file = fopen("CustomerData.txt", "w+");
+    for(i = 0; i < numAccounts; i++) {
+            if (i==numAccounts-1){
+                fprintf(file, "%s %s %s %s %s %s %s %.2lf", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
+            }else{
+                fprintf(file, "%s %s %s %s %s %s %s %.2lf\n", accounts[i].fName, accounts[i].lName, accounts[i].city, accounts[i].state, accounts[i].phone, accounts[i].id, accounts[i].pass, accounts[i].balance);
+    }
+    }
+    fclose(file);
 }
